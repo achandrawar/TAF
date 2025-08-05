@@ -87,9 +87,7 @@ TAF/
 │                   └── uat/
 │                       └── searchData.json
 ├── pom.xml
-├── README.md
-└── .github/
-    └── copilot-instructions.md
+└── README.md
 ```
 - **pages/**: Web page locators and actions
 - **steps/**: High-level business steps
