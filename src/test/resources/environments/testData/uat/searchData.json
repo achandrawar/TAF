@@ -1,0 +1,10 @@
+[
+  {
+    "searchQuery": "Serenity BDD UAT",
+    "expectedTitle": "Google"
+  },
+  {
+    "searchQuery": "JUnit 5",
+    "expectedTitle": "Google"
+  }
+]
