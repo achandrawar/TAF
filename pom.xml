@@ -20,7 +20,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>net.serenity-bdd</groupId> 
+            <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-core</artifactId>
             <version>${serenity.version}</version>
         </dependency>

@@ -27,7 +27,7 @@ public class GoogleSearchTest {
     @ParameterizedTest(name = ParameterizedTest.ARGUMENTS_WITH_NAMES_PLACEHOLDER)
     @MethodSource("searchDataProvider")
     @Tag("smoke")
-    void searchingGoogle(Map<String, Object> testData) {
+    void searchingAndVerifyingGoogle(Map<String, Object> testData) {
         String query = (String) testData.get("searchQuery");
         String expectedTitle = (String) testData.get("expectedTitle");
         googleSearchSteps.searchFor(query);
