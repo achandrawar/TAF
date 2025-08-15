@@ -1,7 +1,7 @@
-package com.example.tests.tests;
+package testCases;
 
-import com.example.tests.steps.GoogleSearchSteps;
-import com.example.tests.utils.JsonDataReader;
+import steps.GoogleSearchSteps;
+import utils.JsonDataReader;
 
 import net.serenitybdd.annotations.Steps;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;

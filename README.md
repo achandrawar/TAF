@@ -1,4 +1,4 @@
-# Serenity BDD Test Automation Framework
+# TAF — Serenity BDD Test Automation Framework
 
 ## Project Overview
 This project is a Java-based Test Automation Framework designed to automate web application testing using Serenity BDD, JUnit 5, and the Page Object Model (POM) design pattern. It provides robust browser management, reporting, and supports scalable, maintainable test suites for both technical and non-technical users.
@@ -52,8 +52,8 @@ This project is a Java-based Test Automation Framework designed to automate web 
 ### Installation Steps
 1. **Clone the repository:**
    ```sh
-   git clone <repo-url>
-   cd taf-serenity
+   git clone https://github.com/achandrawar/TAF.git
+   cd TAF
    ```
 2. **Install dependencies:**
    ```sh
@@ -70,36 +70,27 @@ TAF/
 ├── src/
 │   └── test/
 │       ├── java/
-│       │   └── com/example/tests/
-│       │       ├── pages/      # Page Objects
-│       │       ├── steps/      # Step Definitions
-│       │       ├── tests/      # Test Classes
-│       │       ├── utils/      # Utilities (ConfigReader, JsonDataReader, etc.)
-│       │       └── config/     # Config classes
+│       │   ├── pages/        # Page Objects
+│       │   ├── steps/        # Step Definitions
+│       │   ├── testCases/    # Test Classes
+│       │   └── utils/        # Utilities
 │       └── resources/
-│           ├── serenity.properties
-│           ├── testdata.properties
-│           └── environments/
-│               ├── dev.properties
-│               ├── qa.properties
-│               ├── prod.properties
-│               └── testData/
-│                   └── uat/
-│                       └── searchData.json
+│           ├── config.properties
+│           ├── serenity.conf
+│           └── environments/  # environment-specific property files
 ├── pom.xml
 └── README.md
 ```
 - **pages/**: Web page locators and actions
-- **steps/**: High-level business steps
-- **tests/**: JUnit 5 test classes
-- **utils/**: Utility classes (config, data, logging)
-- **config/**: Configuration classes
-- **resources/**: Properties and environment files
+- **steps/**: High-level business steps (Serenity steps)
+- **testCases/**: JUnit 5 test classes
+- **utils/**: Utility classes (config readers, data loaders)
+- **resources/**: Properties and Serenity configuration files
 
 ---
 
 ## Configuration
-- **serenity.properties:** Main Serenity config (browser, base URL, reporting)
+- **serenity.properties:** Main Serenity config (browser, base URL, reporting). This project contains a root `serenity.properties` and may contain environment-specific property files under `src/test/resources/environments/`.
 - **testdata.properties:** Key-value test data
 - **environments/**: Per-environment config (dev, qa, prod)
 - **testData/**: JSON test data for data-driven tests
@@ -121,13 +112,23 @@ serenity.take.screenshots=AFTER_EACH_STEP
 
 ## How to Run the Project
 ### Local Run
-```sh
+Run the full test suite and generate Serenity reports:
+
+ ```sh
 mvn clean verify
 ```
+
 - To run with a specific environment:
-  ```sh
-  mvn clean verify -Denv=dev
-  ```
+
+ ```sh
+mvn clean verify -Denv=dev
+```
+
+- To (re-)generate or aggregate Serenity reports after test runs:
+
+ ```sh
+mvn serenity:aggregate
+```
 
 ### Run Specific Tests or Tags
 ```sh
@@ -135,7 +136,7 @@ mvn clean verify -Dtags=@smoke
 ```
 
 ### Reports
-- Serenity reports: `target/serenity-reports/index.html`
+- Serenity reports: `target/serenity-reports/index.html` (open this after a successful `mvn clean verify` or after running `mvn serenity:aggregate`)
 
 ---
 

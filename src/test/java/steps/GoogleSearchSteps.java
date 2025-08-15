@@ -1,6 +1,6 @@
-package com.example.tests.steps;
+package steps;
 
-import com.example.tests.pages.GoogleHomePage;
+import pages.GoogleHomePage;
 import net.serenitybdd.annotations.Step;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

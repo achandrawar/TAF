@@ -1,4 +1,4 @@
-package com.example.tests.pages;
+package pages;
 
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.annotations.findby.FindBy;
