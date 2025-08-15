@@ -97,6 +97,7 @@
                 <version>${serenity.version}</version>
                 <executions>
                     <execution>
+                        <phase>verify</phase>
                         <goals>
                             <goal>aggregate</goal>
                         </goals>
